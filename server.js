@@ -4,9 +4,24 @@ const pool = require('./db')
 const http = require('http').createServer(app)
 const io = require('socket.io')(http)
 
+app.set('views', __dirname + '/views')
+app.set('view engine', 'ejs')
+
 // Set up routes
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html')
+    res.render('layout', { content: 'Content for the Home page' })
+})
+
+app.get('/profile', (req, res) => {
+    res.render('profile', { content: 'Content for the Profile page' })
+})
+
+app.get('/settings', (req, res) => {
+    res.render('settings', { content: 'Content for the Settings page' })
+})
+
+app.get('/logout', (req, res) => {
+    res.render('logout', { content: 'Content for the Logout page' })
 })
 
 // Set up Socket.io event handlers
@@ -17,7 +32,7 @@ io.on('connection', (socket) => {
     })
 })
 
-// checking the database connection
+// Checking the database connection
 pool.query('SELECT NOW()', (err, result) => {
     if (!err) {
         console.log('PostgreSQL connected successfully.')
@@ -25,7 +40,6 @@ pool.query('SELECT NOW()', (err, result) => {
         console.error('Error connecting to PostgreSQL:', err)
     }
 })
-
 
 // Start the server
 const port = 3000
