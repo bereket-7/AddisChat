@@ -5,7 +5,6 @@ const router = express.Router()
 const multer = require('multer')
 const isAuthenticated = require('../middleware/auth')
 
-// Configure multer for handling file uploads
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, 'public/uploads')
