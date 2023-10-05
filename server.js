@@ -4,6 +4,8 @@ const pool = require('./db/db')
 const http = require('http').createServer(app)
 const io = require('socket.io')(http)
 
+
+app.use(express.static('public'))
 app.set('views', __dirname + '/views')
 app.set('view engine', 'ejs')
 
