@@ -1,0 +1,13 @@
+<h1>User Profile</h1>
+<img src="<%= user.profilePicture %>" alt="Profile Picture">
+<h2>
+    <%= user.username %>
+</h2>
+<p>Status: <%= user.status %>
+</p>
+
+<form action="/profile" method="post" enctype="multipart/form-data">
+    <input type="file" name="profilePicture">
+    <textarea name="status" placeholder="Update your status"></textarea>
+    <button type="submit">Update Profile</button>
+</form>
