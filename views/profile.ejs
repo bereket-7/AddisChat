@@ -6,8 +6,21 @@
 <p>Status: <%= user.status %>
 </p>
 
+<!-- Update Profile Picture -->
 <form action="/profile" method="post" enctype="multipart/form-data">
     <input type="file" name="profilePicture">
     <textarea name="status" placeholder="Update your status"></textarea>
     <button type="submit">Update Profile</button>
 </form>
+
+<!-- Additional Profile Settings -->
+<div class="profile-settings">
+    <h2>Profile Settings</h2>
+    <ul>
+        <li><a href="/profile/changepassword">Change Password</a></li>
+        <li><a href="/profile/changeusername">Change Username</a></li>
+        <li><a href="/profile/mychannel">My Channel</a></li>
+        <li><a href="/profile/mygroup">My Group</a></li>
+        <li><a href="/profile/contacts">Contacts</a></li>
+    </ul>
+</div>
