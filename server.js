@@ -3,7 +3,17 @@ const app = express()
 const pool = require('./db/db')
 const http = require('http').createServer(app)
 const io = require('socket.io')(http)
+const express = require('express')
+const session = require('express-session')
 
+// Configure session setting
+app.use(
+    session({
+        secret: 'asdfghjklqwertyuiomnbvcxzzxfgyumnhgfr123erfg098767ujbgt8ijhgfd345123456tgfd9iu76tr43wq1we45tyuji',
+        resave: false,
+        saveUninitialized: false,
+    })
+)
 
 app.use(express.static('public'))
 app.set('views', __dirname + '/views')
