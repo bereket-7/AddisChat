@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - AddisChat</title>
+    <link rel="stylesheet" href="/public/css/settings.css">
+</head>
+
+<body>
+    <div class="settings-container">
+        <h1>Settings</h1>
+
+        <section class="profile-section">
+            <h2>Profile Settings</h2>
+            <!-- User profile options -->
+            <label for="profilePicture">Profile Picture:</label>
+            <input type="file" id="profilePicture" name="profilePicture" accept="image/*">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Your username">
+            <label for="status">Status:</label>
+            <input type="text" id="status" name="status" placeholder="Your status">
+        </section>
+
+        <section class="account-section">
+            <h2>Account Settings</h2>
+            <!-- Change password -->
+            <label for="currentPassword">Current Password:</label>
+            <input type="password" id="currentPassword" name="currentPassword">
+            <label for="newPassword">New Password:</label>
+            <input type="password" id="newPassword" name="newPassword">
+            <label for="confirmNewPassword">Confirm New Password:</label>
+            <input type="password" id="confirmNewPassword" name="confirmNewPassword">
+        </section>
+
+        <section class="notifications-section">
+            <h2>Notification Settings</h2>
+            <!-- Email preferences -->
+            <label>Email Preferences:</label>
+            <input type="checkbox" id="emailUpdates" name="emailUpdates">
+            <label for="emailUpdates">Receive email updates</label>
+        </section>
+
+        <button class="btn-save">Save Settings</button>
+        <button class="btn-reset">Reset to Default</button>
+    </div>
+
+    <script src="/public/js/settings.js"></script>
+</body>
+
+</html>
