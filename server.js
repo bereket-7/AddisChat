@@ -5,6 +5,9 @@ const http = require('http').createServer(app)
 const io = require('socket.io')(http)
 const express = require('express')
 const session = require('express-session')
+const loginRouter = require('./routes/login')
+
+app.use('/login', loginRouter)
 
 // Configure session setting
 app.use(
