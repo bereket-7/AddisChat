@@ -1,3 +1,7 @@
+const express = require('express')
+const router = express.Router()
+
+module.exports = router
 
 router.get('/group/members/:groupId', isAuthenticated, async (req, res) => {
     const groupId = req.params.groupId
