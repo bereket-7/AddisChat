@@ -11,6 +11,7 @@
 <body>
     <div class="container">
         <div class="sidebar">
+            <input type="text" id="group-search" placeholder="Search groups">
             <!-- List of groups -->
             <ul id="group-list">
                 <% groups.forEach((group)=> { %>
@@ -18,6 +19,10 @@
                             <%= group.name %>
                         </a></li>
                     <% }); %>
+            </ul>
+            <!-- Add a list for search results -->
+            <ul id="search-results">
+                <!-- Search results will be displayed here -->
             </ul>
         </div>
         <div class="chat">
