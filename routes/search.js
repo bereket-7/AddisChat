@@ -9,6 +9,12 @@ router.get('/users', async (req, res) => {
     const query = req.query.query
     const users = await User.find({ username: { $regex: query, $options: 'i' } })
     res.json(users)
-});
+})
 
 
+// Search for groups
+router.get('/groups', async (req, res) => {
+    const query = req.query.query
+    const groups = await Group.find({ name: { $regex: query, $options: 'i' } })
+    res.json(groups)
+})
