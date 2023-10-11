@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/group.css">
+    <title>Group Chat</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <!-- List of groups -->
+            <ul id="group-list">
+                <% groups.forEach((group)=> { %>
+                    <li><a href="#" data-group="<%= group.id %>">
+                            <%= group.name %>
+                        </a></li>
+                    <% }); %>
+            </ul>
+        </div>
+        <div class="chat">
+            <div class="chat-header">
+                <h2 id="group-name">Select a group</h2>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <!-- Messages will be displayed here -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="message-input" placeholder="Type a message...">
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+    <script src="/scripts/group.js"></script>
+</body>
+
+</html>
