@@ -32,6 +32,38 @@
                 <button id="send-button">Send</button>
             </div>
         </div>
+
+        <section id="group-membership">
+            <h3>Group Membership</h3>
+            <form action="/group/members/add/<%= group.id %>" method="post">
+                <select name="user" id="user-select">
+                    <% users.forEach((user)=> { %>
+                        <option value="<%= user.id %>">
+                            <%= user.username %>
+                        </option>
+                        <% }); %>
+                </select>
+                <select name="role" id="role-select">
+                    <option value="admin">Admin</option>
+                    <option value="member">Member</option>
+                </select>
+                <button type="submit">Add User to Group</button>
+            </form>
+
+            <h3>Group Members</h3>
+            <ul id="group-members-list">
+                <% groupMembers.forEach((member)=> { %>
+                    <li>
+                        <span>
+                            <%= member.username %>
+                        </span>
+                        <span>(<%= member.role %>)</span>
+                    </li>
+                    <% }); %>
+            </ul>
+        </section>
+
+
     </div>
     <script src="/public/js/group.js"></script>
 </body>
