@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/search.css">
+    <title>Group Chat</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Search</h1>
+        <form id="search-form">
+            <input type="text" id="search-input" placeholder="Search for users, groups, or chats">
+            <button type="submit">Search</button>
+        </form>
+        <div class="search-results">
+            <div class="user-results">
+                <h2>Users</h2>
+                <ul id="user-list"></ul>
+            </div>
+            <div class="group-results">
+                <h2>Groups</h2>
+                <ul id="group-list"></ul>
+            </div>
+            <div class="chat-results">
+                <h2>Chats</h2>
+                <ul id="chat-list"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="/public/js/search.js"></script>
+</body>
+
+</html>
