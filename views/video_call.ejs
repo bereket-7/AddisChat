@@ -3,15 +3,27 @@
 
 <head>
     <title>WebRTC Video Call</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/video_call.css">
 </head>
 
 <body>
-    <h1>WebRTC Video Call</h1>
-    <video id="localVideo" autoplay></video>
-    <video id="remoteVideo" autoplay></video>
-    <button id="startCall">Start Call</button>
-    <button id="endCall">End Call</button>
-    <script src="/client.js"></script>
+    <div class="video-container">
+        <div class="local-video">
+            <video id="localVideo" autoplay muted></video>
+            <div class="controls">
+                <button id="muteButton">Mute</button>
+                <button id="stopVideoButton">Stop Video</button>
+            </div>
+        </div>
+        <div class="remote-video">
+            <video id="remoteVideo" autoplay></video>
+        </div>
+    </div>
+    <div class="buttons">
+        <button id="startCall" class="call-button">Start Call</button>
+        <button id="endCall" class="call-button">End Call</button>
+    </div>
+    <script src="/public/js/video_call.js"></script>
 </body>
 
 </html>
