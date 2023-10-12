@@ -47,6 +47,16 @@ io.on('connection', (socket) => {
     })
 })
 
+io.on('connection', (socket) => {
+    socket.on('offer', (data) => {
+        socket.broadcast.emit('offer', data)
+    })
+
+    socket.on('answer', (data) => {
+        socket.broadcast.emit('answer', data)
+    })
+})
+
 // Checking the database connection
 pool.query('SELECT NOW()', (err, result) => {
     if (!err) {
